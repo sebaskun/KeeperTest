@@ -1,0 +1,92 @@
+// CREATE USER
+
+curl -X POST \
+  http://localhost:8000/users/register \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: e726a3b3-2310-182f-0d3e-b089a9162318' \
+  -d '
+    {
+    	"username": "sebastian",
+    	"password": "awesome_dev"
+    }
+'
+
+// GET ALL BOOKMARKS
+
+curl -X GET \
+  http://localhost:8000/api/bookmark \
+  -H 'authorization: Basic Z2FicmllbDoxMjM=' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: de76be47-da35-4968-87ca-d9d891d8fe71' \
+  -d '
+    {
+    	"username": "sebastian",
+    	"password": "awesome_dev"
+    }
+'
+
+// CREATE
+
+curl -X POST \
+  http://localhost:8000/api/bookmark/ \
+  -H 'authorization: Basic Z2FicmllbDoxMjM=' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 0b9a15ab-1f2e-b398-e124-588abac4236d' \
+  -d '
+    {
+    	"title": "awesome_title",
+    	"url": "www.google.com",
+    	"private": true
+    }
+'
+
+// PATCH
+
+curl -X PATCH \
+  http://localhost:8000/api/bookmark/8/ \
+  -H 'authorization: Basic Z2FicmllbDoxMjM=' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 005d0569-98e6-25e6-9011-57416465a446' \
+  -d '
+    {
+    	"title": "awesome_title_updated",
+    	"private": false
+    }
+'
+
+
+// PATCH
+curl -X PUT \
+  http://localhost:8000/api/bookmark/8/ \
+  -H 'authorization: Basic Z2FicmllbDoxMjM=' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: e42a4511-6daa-3e65-9c0d-2bae72050a14' \
+  -d '
+    {
+    	"title": "awesome_title_updated",
+    	"url": "www.nowimupdatedaswell.com",
+    	"private": false
+    }
+'
+
+// DELETE
+
+curl -X DELETE \
+  http://localhost:8000/api/bookmark/8/ \
+  -H 'authorization: Basic Z2FicmllbDoxMjM=' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 11655c20-fbca-347d-0085-46425f815564' \
+  -d '
+    {
+    	"title": "awesome_title_updated",
+    	"url": "www.nowimupdatedaswell.com",
+    	"private": true
+    }
+'
+
